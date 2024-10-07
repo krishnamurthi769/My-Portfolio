@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/db4ef9c902.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fa-solid fa-times" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>UI/UX Designer</p>
+            <h1>Hi, I'm <span>Krishna Murthi</span><br> From Karnataka</h1>
+        </div>
+    </div>
+</div>
+
+<!-------------------about--------------->
+<div id="About">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="Images/user.jpg">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>I am an experienced graphic designer with a robust background in photo editing, video editing, and logo design, honed over five years. Currently, I lead the graphic design team for the GITAM Quiz Club and serve as a graphic designer for GITAM Student Life. My skills have been recognized on a larger scale, as evidenced by my selection for the graphic domain at Shorefest24 in Bengaluru.</p>
+                
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experince</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
+                        <li><span>Video Editing</span><br>Adobe Premiere, Final Cut Pro</li>
+                        <li><span>Programming</span><br>Java, C language</li>
+                        <li><span>Soft Skills</span><br>Communication skills, Team Management, Problem Solving, leadership</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>SSLC</span><br>Vignyana Jyoti High School (2019)</li>
+                        <li><span>PUC</span><br>Vignyana Jyoti Res PU Science
+                            College (2021)</li>
+                        <li><span>Bachelor of Technology in Computer
+                            Science</span><br>GITAM UNIVERSITY (2025)</li>
+                    </ul>
+                </div>
+                
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>Graphic Lead</span><br>GITAM Quiz Club</li>
+                        <li><span>Volenteer</span><br>National Service Scheme (NSS)</li>
+                        <li><span>Internship</span><br>Web Development in Freelancer</li>
+                    </ul>
+                </div>
+                </div>
+                
+            
+            </div>
+        </div>
+    </div>
+</div>
+<!-------------sevices-------------->
+
+<div id="services">
+    <div id="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-cannabis"></i>
+                <h2>Graphic Designer</h2>
+                <p>Led a Graphic team in GITAM Quiz Club and Designed Posters, Edited Videos, Photos.</p>
+                <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-laptop-code"></i>
+                <h2>Hackathon</h2>
+                <p>An IoT project which focused on automatically watering the plants based on the moisture content of the soil</p>
+                <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-briefcase"></i>
+                <h2>INTERNSHIP</h2>
+                <p>Internship on Customer Segmentation using Machine Learning Algorithm.</p>
+                <a href="#">Learn more</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-------------contact----------->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i>krishnamurthikm07@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i>8088500769</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/krishna-murthi-8547a5299/"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <a href="Images/Krishna Murthi_CV.pdf" download class="btn">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Made by Krishna Murthi</p>
+    </div>
+</div>
+
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+
+<script>
+    var sidemenu = document,getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwNkQJMppI07i7z37mi9AJAMP5n8kzTforNcmNBopE_ZE1F0NAJfP4ZSFG6BSNMd8f4QQ/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById('msg')
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+    
+</body>
+</html>
